@@ -1,0 +1,87 @@
+#include <math.h>
+#include <stdio.h>
+
+float Addition (float, float);
+float Subtraction (float,float); 
+float Multiplication (float,float);
+float Division (float,float);
+float Power (float,float);
+
+float main (void)
+{
+	int operationNumber;
+	float number1,number2,add,subs,mult,divide,poww;
+	printf("Enter first and second number please: ");
+	scanf("%f %f",&number1,&number2);
+	printf("Addition for 1 \nSubtraction for 2 \nMultiplication for 3 \nDivision for 4 \nPower for 5 \nPlease choose an operation number from the list: ");
+	scanf("%d",&operationNumber);
+		
+	switch(operationNumber)
+	{	
+		case 1:
+			add =Addition(number1,number2);
+			printf("%f + %f = %f",number1,number2,add);
+
+		break;
+		
+		case 2:
+			subs =Subtraction(number1,number2);
+			printf("%f - %f = %f",number1,number2,subs);
+		
+		break;
+		
+		case 3:
+			mult =Multiplication(number1,number2);
+			printf("%f x %f = %f",number1,number2,mult);
+
+		break;
+		
+		case 4:
+			divide =Division(number1,number2);
+			if (number2==0)
+			{
+			printf("The division can not be calculated. Because divider can not be 0\n");
+			}else		
+			{
+			printf("%f ÷ %f = %f",number1,number2,divide);	
+			}
+
+		break;
+		
+		case 5:
+			poww=Power(number1,number2);
+			printf("(%f)^%f = %f",number1,number2,poww);
+
+		break;
+		
+		default:
+			printf("Error, you choose wrong operation number.");
+
+	}	
+	return 0;
+}
+
+float Addition(float number1, float number2)
+{	
+	return number1+number2;
+}
+
+float Subtraction(float number1,float number2)
+{
+	return number1-number2;
+}
+
+float Multiplication(float number1, float number2)
+{
+	return number1*number2;
+}
+
+float Division(float number1, float number2)
+{
+	return number1/number2;	
+}
+
+float Power(float number1,float number2)
+{
+	return pow(number1,number2);
+}
